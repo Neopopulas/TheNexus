@@ -11,8 +11,13 @@
   --sidebar-width: 260px;
 }
 
+/* Basic reset */
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -29,18 +34,48 @@ a {
   color: inherit;
 }
 
+/* Main layout */
 .site-layout {
   display: grid;
   grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
   min-height: 100vh;
 }
 
+/* Sidebar */
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 1.5rem 1rem 1.5rem 1.25rem;
+  background: linear-gradient(180deg, #241d16, #18130f);
+  color: var(--panel-text);
+  border-right: 1px solid var(--line);
+  overflow-y: auto;
+}
+
+.site-title {
+  margin-bottom: 1.25rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.site-title a {
+  text-decoration: none;
+}
+
+.site-title a:hover {
+  color: var(--accent);
+}
+
+/* Main sidebar navigation */
 .site-nav {
   display: flex;
   flex-direction: column;
   gap: 0.18rem;
 }
 
+/* Top-level nav links only */
 .site-nav > a {
   display: inline;
   width: fit-content;
@@ -59,6 +94,7 @@ a {
   color: var(--accent);
 }
 
+/* Small nested links under The Duchies */
 .sidebar-subnav {
   display: flex;
   flex-direction: column;
@@ -87,12 +123,14 @@ a {
   color: var(--accent);
 }
 
+/* Page content */
 .page-content {
   width: 100%;
   max-width: none;
   padding: 3rem;
 }
 
+/* Hero block */
 .hero {
   padding: 4rem;
   margin-bottom: 2rem;
@@ -111,6 +149,7 @@ a {
   font-weight: bold;
 }
 
+/* Headings */
 h1 {
   margin: 0 0 1rem;
   font-size: clamp(2.4rem, 6vw, 5rem);
@@ -126,11 +165,17 @@ h3 {
   margin-top: 0;
 }
 
+/* General content sections */
 .content-section {
   padding: 2rem 0;
   max-width: none;
 }
 
+.content-section p {
+  max-width: 900px;
+}
+
+/* Cards */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -144,14 +189,24 @@ h3 {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 0.8rem;
+  color: var(--text);
   text-decoration: none;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card p {
+  color: var(--muted);
 }
 
 .card:hover {
   border-color: var(--accent);
 }
 
+.card:hover h3 {
+  color: var(--accent);
+}
+
+/* Images */
 .full-width-image {
   width: 100%;
   display: block;
@@ -159,6 +214,7 @@ h3 {
   border: 1px solid var(--line);
 }
 
+/* Page-level subnavigation, used inside pages */
 .page-subnav {
   display: flex;
   flex-wrap: wrap;
@@ -180,29 +236,44 @@ h3 {
   color: #fff7eb;
 }
 
+/* Optional simple info panels */
+.info-panel {
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+}
+
+/* Mobile layout */
 @media (max-width: 800px) {
   .site-layout {
     display: block;
   }
 
-.sidebar {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  padding: 1.5rem 1rem 1.5rem 1.25rem;
-  background: linear-gradient(180deg, #241d16, #18130f);
-  color: var(--panel-text);
-  border-right: 1px solid var(--line);
+  .sidebar {
+    position: static;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .site-title {
+    margin-bottom: 0.75rem;
   }
 
   .site-nav {
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .site-nav > a {
+    width: auto;
   }
 
   .sidebar-subnav {
     width: 100%;
-    margin: 0 0 0.5rem 0.75rem;
+    margin: 0.25rem 0 0.5rem 0.75rem;
   }
 
   .page-content {
@@ -216,3 +287,4 @@ h3 {
   .card-grid {
     grid-template-columns: 1fr;
   }
+}
