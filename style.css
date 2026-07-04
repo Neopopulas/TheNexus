@@ -1,24 +1,25 @@
 :root {
-  --bg: #f4efe6;
-  --panel: #262119;
-  --panel-text: #f7f0e5;
-  --text: #221d17;
-  --muted: #6f6254;
-  --line: #d8cbb8;
-  --card: #fffaf1;
-  --accent: #8f3f2b;
+  --bg: #12100d;
+  --panel: #1f1a14;
+  --panel-text: #f2eadc;
+  --text: #e8ddcb;
+  --muted: #a99a86;
+  --line: #3a3026;
+  --card: #1b1712;
+  --accent: #b46a3c;
 
   --sidebar-width: 260px;
   --content-max: 1180px;
 }
-
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at top left, rgba(180, 106, 60, 0.12), transparent 32rem),
+    var(--bg);
   color: var(--text);
   font-family: Georgia, "Times New Roman", serif;
   line-height: 1.6;
@@ -69,7 +70,8 @@ a {
 }
 
 .site-nav a:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(180, 106, 60, 0.16);
+  color: #fff7eb;
 }
 
 .page-content {
@@ -123,12 +125,9 @@ h3 {
 }
 
 .card {
-  display: block;
-  padding: 1.5rem;
   background: var(--card);
   border: 1px solid var(--line);
-  border-radius: 0.8rem;
-  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
 .card:hover {
@@ -147,10 +146,15 @@ h3 {
     display: block;
   }
 
-  .sidebar {
-    position: static;
-    height: auto;
-  }
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 2rem 1.25rem;
+  background: linear-gradient(180deg, #241d16, #18130f);
+  color: var(--panel-text);
+  border-right: 1px solid var(--line);
+}
 
   .site-nav {
     flex-direction: row;
