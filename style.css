@@ -173,3 +173,24 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
+
+.page-subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2rem 0;
+}
+
+.page-subnav a {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--card);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.page-subnav a:hover {
+  border-color: var(--accent);
+  color: #fff7eb;
+}
