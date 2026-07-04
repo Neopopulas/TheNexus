@@ -114,7 +114,7 @@ h3 {
 
 .content-section {
   padding: 2rem 0;
-  max-width: 760px;
+  max-width: none;
 }
 
 .card-grid {
@@ -166,19 +166,12 @@ h3 {
   }
 
   .hero {
-    padding: 2rem;
-  }
-
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.page-subnav {
+    padding: 2rem;  }
+	.page-subnav {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin: 2rem 0;
+  margin: 1.5rem 0 2rem;
 }
 
 .page-subnav a {
