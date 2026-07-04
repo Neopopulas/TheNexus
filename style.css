@@ -185,9 +185,14 @@ h3 {
     display: block;
   }
 
-  .sidebar {
-    position: static;
-    height: auto;
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 1.5rem 1rem 1.5rem 1.25rem;
+  background: linear-gradient(180deg, #241d16, #18130f);
+  color: var(--panel-text);
+  border-right: 1px solid var(--line);
   }
 
   .site-nav {
