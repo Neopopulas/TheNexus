@@ -172,7 +172,8 @@ h3 {
 }
 
 .content-section p {
-  max-width: 900px;
+  max-width: none;
+  width: 100%;
 }
 
 /* Cards */
